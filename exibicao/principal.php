@@ -15,37 +15,23 @@
         <span class="navbar-brand mb-0 h1">Treinaweb</span>
     </nav>
 
-    <?php var_dump(cursos()); ?>
-
     <div class="container">
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                    <th scope="col">Nome do curso</th>
+                    <th scope="col">Carga Horária</th>
+                    <th scope="col">Versão da ferramenta</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                </tr>
+                <?php foreach(cursos() as $curso) : ?>
+                    <tr>
+                        <th scope="row"><?= $curso["nome_curso"] ?></th>
+                        <td><?= $curso["carga_horaria"] ?></td>
+                        <td><?= $curso["versao_ferramenta"] ?></td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
