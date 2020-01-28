@@ -15,6 +15,8 @@
         <span class="navbar-brand mb-0 h1">Treinaweb</span>
     </nav>
 
+    <?php var_dump(cursos()); ?>
+
     <div class="container">
         <table class="table">
             <thead>
