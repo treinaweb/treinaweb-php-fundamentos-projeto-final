@@ -26,9 +26,13 @@
             </thead>
             <tbody>
                 <?php foreach(cursos() as $curso) : ?>
+                    <?php if (!$curso["status"]) {
+                        continue;
+                    } ?>
+
                     <tr>
                         <th scope="row"><?= $curso["nome_curso"] ?></th>
-                        <td><?= $curso["carga_horaria"] ?></td>
+                        <td><?= carga_horaria($curso["carga_horaria"]) ?></td>
                         <td><?= $curso["versao_ferramenta"] ?></td>
                     </tr>
                 <?php endforeach; ?>
